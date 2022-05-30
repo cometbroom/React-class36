@@ -1,0 +1,23 @@
+ul.products {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+li {
+    grid-column: span 12;
+}
+
+
+@media screen and (min-width: 668px) {
+    li {
+        grid-column: span 6;
+    }
+        
+}
+
+@media screen and (min-width: 900px) {
+    li {
+        grid-column: span 4;
+    }
+        
+}

@@ -7,6 +7,10 @@ li {
     grid-column: span 12;
 }
 
+button.active {
+    background-color: rgb(141, 141, 141);
+}
+
 
 @media screen and (min-width: 668px) {
     li {

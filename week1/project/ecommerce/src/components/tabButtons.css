@@ -6,6 +6,11 @@ button {
 }
 ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     gap: 10px;
+}
+button:hover {
+    background-color: rgb(188, 188, 188);
+    cursor: pointer;
 }

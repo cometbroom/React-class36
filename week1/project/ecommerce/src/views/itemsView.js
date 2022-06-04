@@ -7,33 +7,19 @@ import { useState } from "react";
 function Items() {
   const [currentTab, setTab] = useState("");
 
-  //Function to get all products or filter according to state
-  //It will return JSX of a bunch of <li> with ItemCard in them.
-  function getTargetProducts() {
-    //If no currentTab then show everything
-    const products =
-      currentTab === ""
-        ? allProducts
-        : allProducts.filter(
-            (product) => currentTab.replace(/FAKE: /, "") === product.category
-          );
-
-    return products.map((product, idx) => (
-      <li key={idx}>
-        <Item image={product.image} title={product.title}></Item>
-      </li>
-    ));
-  }
-  //Set our JSX elements to a variable to put in final render
-  const productsView = getTargetProducts();
+  //Function to get all products, if currentTab is "" or filter accordingly
+  //This will return an array of strings which are later used for rendering
+  const products =
+    currentTab === ""
+      ? allProducts
+      : allProducts.filter(
+          //Remove FAKE from strings to more easily filter our array
+          (product) => currentTab.replace(/FAKE: /, "") === product.category
+        );
 
   //Function that gets called by child tab buttons
   const tabChangeHandler = (e, key) => {
-    if (key === currentTab) {
-      setTab("");
-    } else {
-      setTab(key);
-    }
+    key === currentTab ? setTab("") : setTab(key);
   };
 
   return (
@@ -42,7 +28,13 @@ function Items() {
         activeTab={currentTab}
         tabchangeclick={tabChangeHandler}
       ></TabButtons>
-      <ul className="products">{productsView}</ul>
+      <ul className="products">
+        {products.map((product, idx) => (
+          <li key={idx}>
+            <Item image={product.image} title={product.title}></Item>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

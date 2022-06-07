@@ -1,0 +1,18 @@
+div.item-card {
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+img {
+    max-height: 300px;
+    object-fit: contain;
+    width: 100%;
+}
+
+span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 8px;
+}

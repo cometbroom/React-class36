@@ -1,0 +1,17 @@
+
+div.product-detail {
+	border-radius: 6px;
+	max-width: 500px;
+	margin: auto;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+div.generic-details {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	color: gray;
+}

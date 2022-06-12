@@ -1,7 +1,7 @@
 import { Loading } from "react-loading-dot/lib";
 import { useParams } from "react-router-dom";
-import Error from "../components/error";
-import Item from "../components/itemCard";
+import Error from "../components/Error";
+import ItemCard from "../components/ItemCard";
 import useFetch from "../hooks/useFetch";
 import "./ProductController.css";
 
@@ -18,7 +18,7 @@ function ProductController() {
         <Loading background="black"></Loading>
       ) : (
         <div className="product-detail">
-          <Item image={data.image} title={data.title}></Item>
+          <ItemCard image={data.image} title={data.title}></ItemCard>
           <div className="generic-details">
             <span>{data.category}</span>
             <span>{data.rating.rate}</span>

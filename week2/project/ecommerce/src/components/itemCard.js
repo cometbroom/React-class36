@@ -1,12 +1,12 @@
-import "./itemCard.css";
+import "./ItemCard.css";
 
-function Item(props) {
+function ItemCard({ image, title, clickHandler }) {
   return (
-    <div className="item-card" onClick={props.clickHandler}>
-      <img src={props.image} alt={props.title}></img>
-      <span>{props.title}</span>
+    <div className="item-card" onClick={clickHandler}>
+      <img src={image} alt={title}></img>
+      <span>{title}</span>
     </div>
   );
 }
 
-export default Item;
+export default ItemCard;

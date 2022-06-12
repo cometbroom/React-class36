@@ -9,7 +9,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import ProductController from "./controllers/ProductController";
-import ItemsController from "./controllers/itemsController";
+import ItemsController from "./controllers/ItemsController";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

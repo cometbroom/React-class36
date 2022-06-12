@@ -1,5 +1,5 @@
 import "./ItemsView.css";
-import Item from "../components/itemCard";
+import ItemCard from "../components/ItemCard";
 import { useNavigate } from "react-router-dom";
 
 function Items(props) {
@@ -16,11 +16,11 @@ function Items(props) {
     <ul className="products">
       {props.products.map((product, idx) => (
         <li key={idx}>
-          <Item
+          <ItemCard
             image={product.image}
             title={product.title}
             clickHandler={clickHandler(product.id)}
-          ></Item>
+          ></ItemCard>
         </li>
       ))}
     </ul>

@@ -1,23 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import "./tabButtons.css";
+import "./TabButtons.css";
 
-function TabButtons(props) {
+function TabButtons({ categories, activeTab }) {
   const navigate = useNavigate();
 
   return (
     <ul>
-      {/* Use all to get name of our buttons and add events */}
-      {props.categories.map((cat, idx) => (
+      {categories.map((cat, idx) => (
         //Use index for react optimization
         <li key={idx}>
-          {/* Use name of button for click handling */}
           <button
-            onClick={(e) =>
-              props.activeTab === cat ? navigate("/") : navigate(cat)
-            }
+            onClick={(e) => navigate(activeTab === cat ? "/" : cat)}
             key={cat}
             //Apply active class for css
-            className={props.activeTab === cat ? "active" : ""}
+            className={activeTab === cat ? "active" : ""}
           >
             {cat}
           </button>

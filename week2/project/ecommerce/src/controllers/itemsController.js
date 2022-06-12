@@ -1,8 +1,8 @@
 import Items from "../views/ItemsView";
-import TabButtons from "../components/tabButtons";
+import TabButtons from "../components/TabButtons";
 import useFetch from "../hooks/useFetch";
 import { Loading } from "react-loading-dot";
-import Error from "../components/error";
+import Error from "../components/Error";
 import { useParams } from "react-router-dom";
 
 function ItemsController() {

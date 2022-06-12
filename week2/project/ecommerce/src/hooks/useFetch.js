@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useFetch(url) {
+function useFetch(url = "https://fakestoreapi.com/products") {
   const [data, setData] = useState();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -11,19 +11,15 @@ function useFetch(url) {
     fetch(url)
       .then((response) => {
         if (response.status === 200) return response.json();
-        else {
-          setError(`Error status: ${response.status}`);
-          setLoading(false);
-        }
+        else setError(`Error status: ${response.status}`);
       })
       .then((data) => {
         setData(data);
-        setLoading(false);
       })
       .catch((error) => {
-        setLoading(false);
         setError(<p>Failed to fetch data</p>);
-      });
+      })
+      .finally(() => setLoading(false));
   }, [url]);
   return [data, loading, error];
 }

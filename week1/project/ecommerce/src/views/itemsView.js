@@ -19,7 +19,7 @@ function Items() {
 
   //Function that gets called by child tab buttons
   const tabChangeHandler = (e, key) => {
-    key === currentTab ? setTab("") : setTab(key);
+    setTab(key === currentTab ? "" : key);
   };
 
   return (
